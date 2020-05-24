@@ -56,7 +56,10 @@ ROOT_URLCONF = 'trooff.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+        # os.path.join(BASE_DIR, 'templates') is to include the template folder in the project directory
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#need the below to include static folder in the project directory
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
