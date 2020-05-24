@@ -12,4 +12,4 @@ def Home(request):
     context = {
         'products': products
     }
-    return render(request, 'home-page.html', context)
+    return render(request, 'products/products-section.html', context)
