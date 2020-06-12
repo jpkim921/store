@@ -71,3 +71,9 @@ def remove_from_cart(request, slug):
     else:
         messages.info(request, "You do not have an active order")
         return redirect("core:home")
+
+
+def checkout(request):
+
+    context = {}
+    return render(request, 'checkout-page.html', context)
