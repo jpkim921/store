@@ -17,7 +17,7 @@ def add_to_cart(request, slug):
     # find the orders that belong to a user AND still hasn't been ordered yet
     order_qs = Order.objects.filter(user=request.user, ordered=False)
 
-    print(order_qs.exists())
+    # print(order_qs.exists())
 
     # if such a list exists,
     if order_qs.exists():
@@ -74,6 +74,18 @@ def remove_from_cart(request, slug):
 
 
 def checkout(request):
+    order_qs = Order.objects.filter(user=request.user, ordered=False)
+    cartItems = order_qs[0].orderitems.all()
 
-    context = {}
+    totalPrice = sum([cart.item.price * cart.quantity for cart in cartItems])
+    totalItemCount = sum(cart.quantity for cart in cartItems)
+    # for item in cartItems:
+    #     print("Product Name: ", item.item)
+    #     print("Price: ", item.item.price)
+    #     print("Item Total: ", item.item.price * item.quantity)
+    context = {
+        'cartItems': cartItems,
+        'totalPrice': totalPrice,
+        'totalItemCount': totalItemCount
+    }
     return render(request, 'checkout-page.html', context)
