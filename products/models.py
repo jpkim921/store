@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -19,11 +20,15 @@ class Product(models.Model):
     price = models.FloatField()
     slug = models.SlugField()
     timestamp = models.DateTimeField(auto_now_add=True)
-    thumbnail = models.ImageField(upload_to="static/products/images", blank=True)
-    mainimage = models.ImageField(upload_to="static/products/images", blank=True)
+    thumbnail = models.ImageField(
+        upload_to="static/products/images", blank=True)
+    mainimage = models.ImageField(
+        upload_to="static/products/images", blank=True)
 
     def __str__(self):
         return self.name
 
+    # def get_absolute_url(self):
+    #     return f"products/{self.slug}/"
     def get_absolute_url(self):
-        return f"products/{self.slug}/"
+        return reverse('mainapp:productpage', kwargs={'slug': self.slug})
