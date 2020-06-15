@@ -9,9 +9,9 @@
       <div class="card">
         <!--Card image-->
         <div class="view overlay">
-          <img src="{{product.thumbnail}}" class="card-img-top" alt="" />
+          <img src="{{ product.thumbnail }}" class="card-img-top" alt="" />
           <!-- <a href="{% url 'mainapp:productpage' product.slug %}"> -->
-          <a href="{{ product.get_absolute_url}}">
+          <a href="{{ product.get_absolute_url }}">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
@@ -32,17 +32,17 @@
             </strong>
           </h5>
 
-          <h4 class="font-weight-bold blue-text">
+          <h4 class="font-weight-light blue-text">
             <strong>{{product.price}}</strong>
           </h4>
-          <div class="card-footer text-center" style="padding-left: 0; padding-right: 0;">
+          <!-- <div class="card-footer text-center" style="padding-left: 0; padding-right: 0;">
             <a href="cart/{{product.slug}}" class="btn btn-block btn-success"
               >Add to Cart</a
             >
             <a href="remove/{{ product.slug }}" class="btn btn-block btn-danger"
               >Remove from Cart</a
             >
-          </div>
+          </div> -->
         </div>
         <!--Card content-->
       </div>
