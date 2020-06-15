@@ -7,5 +7,5 @@ app_name = 'mainapp'
 urlpatterns = [
     # path('', Home.as_view(), name="home"),
     path('', Home, name="home"),
-    path('product/<slug:slug>/', ProductPage, name="productpage")
+    path('products/<slug:slug>/', ProductPage, name="productpage")
 ]

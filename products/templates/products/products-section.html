@@ -10,7 +10,8 @@
         <!--Card image-->
         <div class="view overlay">
           <img src="{{product.thumbnail}}" class="card-img-top" alt="" />
-          <a href="{% url 'mainapp:productpage' product.slug %}">
+          <!-- <a href="{% url 'mainapp:productpage' product.slug %}"> -->
+          <a href="{{ product.get_absolute_url}}">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
