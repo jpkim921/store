@@ -69,13 +69,19 @@ def remove_from_cart(request, slug):
                 user=request.user)[0]
             order.orderitems.remove(order_item)
             messages.info(request, "This item was removed from your cart.")
-            return redirect("mainapp:home")
+            # return redirect("mainapp:home")
+            return redirect('mainapp:productpage', slug=slug)
+
         else:
             messages.info(request, "This item was not in your cart")
-            return redirect("mainapp:home")
+            # return redirect("mainapp:home")
+            return redirect('mainapp:productpage', slug=slug)
+
     else:
         messages.info(request, "You do not have an active order")
-        return redirect("core:home")
+        # return redirect("core:home")
+        return redirect('mainapp:productpage', slug=slug)
+
 
 
 def checkout(request):
@@ -84,10 +90,6 @@ def checkout(request):
 
     totalPrice = sum([cart.item.price * cart.quantity for cart in cartItems])
     totalItemCount = sum(cart.quantity for cart in cartItems)
-    # for item in cartItems:
-    #     print("Product Name: ", item.item)
-    #     print("Price: ", item.item.price)
-    #     print("Item Total: ", item.item.price * item.quantity)
     context = {
         'cartItems': cartItems,
         'totalPrice': totalPrice,

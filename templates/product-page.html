@@ -43,7 +43,7 @@
             Add to cart
             <i class="fas fa-shopping-cart ml-1"></i>
           </a>
-          <a class="btn btn-danger btn-md my-0 p" href="{% url 'cart:remove-from-cart' product.slug %}">
+          <a class="btn btn-danger btn-md my-0 p" href="{{ product.get_remove_from_cart_url }}">
             Remove from cart
             <i class="fas fa-shopping-cart ml-1"></i>
           </a>
