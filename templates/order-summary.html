@@ -7,54 +7,23 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total Item Price</th>
+
           </tr>
         </thead>
         <tbody>
+          {% for item in items %}
           <tr>
             <th scope="row">1</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
+            <td>{{ item.item.name }}</td>
+            <td>{{ item.item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.total_item_price }}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>

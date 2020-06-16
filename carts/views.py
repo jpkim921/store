@@ -86,7 +86,8 @@ def remove_from_cart(request, slug):
 
 def order_summary(request):
     order = Order.objects.filter(user=request.user, ordered=False)
-    context = {}
+    items = order[0].orderitems.all()
+    context = {'items': items}
     return render(request, 'order-summary.html', context)
 
 
