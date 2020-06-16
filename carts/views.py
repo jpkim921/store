@@ -26,16 +26,21 @@ def add_to_cart(request, slug):
             order_item.quantity += 1
             order_item.save()
             messages.info(request, 'This item quantity was updated.')
-            return redirect('mainapp:home')
+            # return redirect('mainapp:home')
+            return redirect('mainapp:productpage', slug=slug)
         else:
             order.orderitems.add(order_item)
             messages.info(request, "This item was added to your cart.")
-            return redirect('mainapp:home')
+            # return redirect('mainapp:home')
+            return redirect('mainapp:productpage', slug=slug)
+
     else:
         order=Order.objects.create(user=request.user)
         order.orderitems.add(order_item)
         messages.info(request, "This item was added to your cart.")
-        return redirect('mainapp:home')
+        # return redirect('mainapp:home')
+        return redirect('mainapp:productpage', slug=slug)
+
 
 
 def remove_from_cart(request, slug):

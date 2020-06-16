@@ -38,7 +38,8 @@
 
           <p>{{product.preview_text}}</p>
 
-          <a class="btn btn-primary btn-md my-0 p" href="{% url 'cart:add-to-cart' product.slug %}">
+          <!-- <a class="btn btn-primary btn-md my-0 p" href="{% url 'cart:add-to-cart' product.slug %}"> -->
+          <a class="btn btn-primary btn-md my-0 p" href="{{ product.get_add_to_cart_url }}">
             Add to cart
             <i class="fas fa-shopping-cart ml-1"></i>
           </a>

@@ -32,3 +32,6 @@ class Product(models.Model):
     #     return f"products/{self.slug}/"
     def get_absolute_url(self):
         return reverse('mainapp:productpage', kwargs={'slug': self.slug})
+        
+    def get_add_to_cart_url(self):
+        return reverse('cart:add-to-cart', kwargs={'slug': self.slug})
