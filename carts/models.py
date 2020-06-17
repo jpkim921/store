@@ -27,3 +27,10 @@ class Order(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def order_total_price(self):
+        items = self.orderitems.all()
+        total = 0
+        for item in items:
+            total += item.total_item_price()
+        return total

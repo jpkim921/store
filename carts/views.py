@@ -86,8 +86,17 @@ def remove_from_cart(request, slug):
 
 def order_summary(request):
     order = Order.objects.filter(user=request.user, ordered=False)
-    items = order[0].orderitems.all()
-    context = {'items': items}
+    if order.exists():
+        items = order[0].orderitems.all()
+        total_price = order[0].order_total_price()
+
+    else:
+        return redirect('/')
+    # print(order[0].order_total_price())
+    context = {
+        'items': items,
+        'total_price': total_price
+        }
     return render(request, 'order-summary.html', context)
 
 
