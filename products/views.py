@@ -3,14 +3,18 @@ from django.views.generic import ListView
 
 from .models import Product
 
-# class Home(ListView):
-#     model = Product
-#     template_name = '/home-page.html'
+from .filters import ProductFilter
+
 
 def Home(request):
     products = Product.objects.all()
+
+    myFilter = ProductFilter(request.GET, queryset=products)
+    products = myFilter.qs
+
     context = {
-        'products': products
+        'products': products,
+        'myFilter': myFilter
     }
     return render(request, 'products/products-section.html', context)
 
