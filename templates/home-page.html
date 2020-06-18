@@ -4,7 +4,7 @@
 <main>
   <div class="container">
     <!--Navbar-->
-    <nav
+    <div
       class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5"
     >
       <!-- Navbar brand -->
@@ -25,32 +25,23 @@
 
       <!-- Collapsible content -->
       <div class="collapse navbar-collapse" id="basicExampleNav">
-        <form method="GET" class="form-inline">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item" style="margin-top: 10px;">
-              {{myFilter.form.name}}
-            </li>
-            <li class="nav-item" style="margin-top: 10px;">
-              {{myFilter.form.categories}}
-            </li>
-            <li class="nav-item">
-              <button class="btn btn-primary" type="submit">Filter</button>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Outwears</a>
-              </li> -->
-          </ul>
-          <!-- {{myFilter.form}} -->
-        </form>
+        <form method="GET">
+          <div class="form-row align-items-center">
+            <div class="col-auto">{{myFilter.form.name}}</div>
 
-        <!-- <form class="form-inline">
-            <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <div class="col-auto">{{myFilter.form.categories}}</div>
+
+            <div class="col">
+              <button class="btn btn-info btn-sm" type="submit">
+                <i class="fas fa-filter"></i>
+                <span class="d-none d-sm-inline-block"> Filter </span>
+              </button>
             </div>
-          </form> -->
+          </div>
+        </form>
       </div>
       <!-- Collapsible content -->
-    </nav>
+    </div>
     <!--/.Navbar-->
 
     <!--Section: Products v.3-->
