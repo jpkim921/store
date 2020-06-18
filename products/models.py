@@ -12,7 +12,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category)
     preview_text = models.TextField(
         max_length=200, null=True, blank=True, verbose_name="Preview Text")
     detail_text = models.TextField(
