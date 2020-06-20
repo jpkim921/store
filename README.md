@@ -1,6 +1,6 @@
 # Trooff
 
-Trooff is an e-commerce store project I took on in an attempt to learn Python and the Django framework. I wanted to focus to learning the framework and not worry about the design so much so I utilized the free [MBD e-commerce](https://mdbootstrap.com/freebies/jquery/e-commerce/) template and adapted it to my project.
+Trooff is an e-commerce store project I took on in an attempt to learn Python and the Django framework. I wanted to focus on learning the language and framework and not worry about the design so much so I utilized the free [MBD e-commerce](https://mdbootstrap.com/freebies/jquery/e-commerce/) template and adapted it to my project.
 
 #### Current functions:
 - Catalog of products
