@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <!--Main layout-->
-<main class="mt-5 pt-4">
+<main class="mt-5">
   <div class="container dark-grey-text mt-5">
     <!--Grid row-->
     <div class="row wow fadeIn">
@@ -39,11 +39,17 @@
           <p>{{product.preview_text}}</p>
 
           <!-- <a class="btn btn-primary btn-md my-0 p" href="{% url 'cart:add-to-cart' product.slug %}"> -->
-          <a class="btn btn-primary btn-md my-0 p" href="{{ product.get_add_to_cart_url }}">
+          <a
+            class="btn btn-primary btn-md my-0 p"
+            href="{{ product.get_add_to_cart_url }}"
+          >
             Add to cart
             <i class="fas fa-shopping-cart ml-1"></i>
           </a>
-          <a class="btn btn-danger btn-md my-0 p" href="{{ product.get_remove_from_cart_url }}">
+          <a
+            class="btn btn-danger btn-md my-0 p"
+            href="{{ product.get_remove_from_cart_url }}"
+          >
             Remove from cart
             <i class="fas fa-shopping-cart ml-1"></i>
           </a>
@@ -76,6 +82,15 @@
         <h4 class="my-4 h4">Additional information</h4>
 
         <p>{{product.detail_text}}</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore maxime
+          distinctio ex saepe veritatis illo reiciendis tempora quam
+          consequuntur numquam. Atque doloremque quam, placeat vero eveniet
+          consectetur illum adipisci beatae ipsum rerum recusandae, dignissimos
+          mollitia corrupti blanditiis quae, tempora nesciunt laboriosam quaerat
+          nostrum animi aliquam culpa. Delectus magnam ipsam consectetur?
+        </p>
+        <p><b><i>Random image placeholders for more product images</i></b></p>
       </div>
       <!--Grid column-->
     </div>
@@ -86,7 +101,7 @@
       <!--Grid column-->
       <div class="col-lg-4 col-md-12 mb-4">
         <img
-          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg"
+          src="https://picsum.photos/350/233?random=1"
           class="img-fluid"
           alt=""
         />
@@ -96,7 +111,7 @@
       <!--Grid column-->
       <div class="col-lg-4 col-md-6 mb-4">
         <img
-          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg"
+          src="https://picsum.photos/350/233?random=2"
           class="img-fluid"
           alt=""
         />
@@ -106,7 +121,7 @@
       <!--Grid column-->
       <div class="col-lg-4 col-md-6 mb-4">
         <img
-          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg"
+          src="https://picsum.photos/350/233?random=3"
           class="img-fluid"
           alt=""
         />
